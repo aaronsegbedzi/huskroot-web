@@ -25,31 +25,31 @@ function check_token($key){
 	return $http_status_code;
 }
 
-if (isset($_GET['token'])) {
-	if (check_token($_GET['token']) !== 202) {
-		if (isset($_COOKIE)) {
-			$user = json_decode($_COOKIE['default'], true);
-			if (!empty($user['token'])) {
-				if (check_token($user['token']) == 202) {
-					$query = removeQueryStringParameter($_SERVER['REQUEST_URI'], 'token');
-					if ($query) {
-						header("Location: ".$query."&token=".$user['token']);
-					}else{header("Location: ?token=".$user['token']);}
-				}else{header("Location: /");}
-			}else{header("Location: /");}
-		}else{header("Location: /");}	
-	}
-}else if (!isset($_GET['token']) || empty($_GET['token'])) {
-	if (isset($_COOKIE)) {
-		$user = json_decode($_COOKIE['default'], true);
-		if (!empty($user['token'])) {
-			if (check_token($user['token']) == 202) {
-				$query = removeQueryStringParameter($_SERVER['REQUEST_URI'], 'token');
-				if ($query) {
-					header("Location: ".$query."&token=".$user['token']);
-				}else{header("Location: ?token=".$user['token']);}
-			}else{header("Location: /");}
-		}
-	}else{header("Location: /");}
-}else{header("Location: /");}
+// if (isset($_GET['token'])) {
+// 	if (check_token($_GET['token']) !== 202) {
+// 		if (isset($_COOKIE)) {
+// 			$user = json_decode($_COOKIE['default'], true);
+// 			if (!empty($user['token'])) {
+// 				if (check_token($user['token']) == 202) {
+// 					$query = removeQueryStringParameter($_SERVER['REQUEST_URI'], 'token');
+// 					if ($query) {
+// 						header("Location: ".$query."&token=".$user['token']);
+// 					}else{header("Location: ?token=".$user['token']);}
+// 				}else{header("Location: /");}
+// 			}else{header("Location: /");}
+// 		}else{header("Location: /");}	
+// 	}
+// }else if (!isset($_GET['token']) || empty($_GET['token'])) {
+// 	if (isset($_COOKIE)) {
+// 		$user = json_decode($_COOKIE['default'], true);
+// 		if (!empty($user['token'])) {
+// 			if (check_token($user['token']) == 202) {
+// 				$query = removeQueryStringParameter($_SERVER['REQUEST_URI'], 'token');
+// 				if ($query) {
+// 					header("Location: ".$query."&token=".$user['token']);
+// 				}else{header("Location: ?token=".$user['token']);}
+// 			}else{header("Location: /");}
+// 		}
+// 	}else{header("Location: /");}
+// }else{header("Location: /");}
 ?>
