@@ -1,7 +1,7 @@
 <?php
 
   function check_token($key){
-    $APPLICATION_URL = 'http://api.leefranco.com';
+    $APPLICATION_URL = 'https://huskroot-api.cocoware.co.uk';
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, $APPLICATION_URL.'/api/v2/auth.php?token='.$key);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);

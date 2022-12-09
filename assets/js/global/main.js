@@ -1,5 +1,5 @@
 // Define API url.
-var REMOTE_APPLICATION_URL = 'http://api.leefranco.com';
+var REMOTE_APPLICATION_URL = 'https://huskroot-api.cocoware.co.uk';
 
 var getUrlParameter = function getUrlParameter(sParam) {
     var sPageURL = decodeURIComponent(window.location.search.substring(1)),
@@ -17,22 +17,22 @@ var getUrlParameter = function getUrlParameter(sParam) {
 };
 
 function logout() {
-  var access_key = getUrlParameter('token');
-  $.ajax({
-    type: 'DELETE',
-    url: REMOTE_APPLICATION_URL + '/api/v2/auth.php?token=' + access_key,
-    success: function(response) {
-      $.removeCookie("default");
-      swal({
-          title: "Goodbye!", 
-          text: "Successfully logged out. Redirecting to login page...", 
-          icon: "success",
-          timer: 2000, 
-          button: false,
-          closeOnClickOutside: false     
-      }).then( function(){
-        window.location.href = "/";
-      });
-    }
-  });
+    var access_key = getUrlParameter('token');
+    $.ajax({
+        type: 'DELETE',
+        url: REMOTE_APPLICATION_URL + '/api/v2/auth.php?token=' + access_key,
+        success: function(response) {
+            $.removeCookie("default");
+            swal({
+                title: "Goodbye!",
+                text: "Successfully logged out. Redirecting to login page...",
+                icon: "success",
+                timer: 2000,
+                button: false,
+                closeOnClickOutside: false
+            }).then(function() {
+                window.location.href = "/";
+            });
+        }
+    });
 }

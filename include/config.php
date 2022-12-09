@@ -1,3 +1,3 @@
 <?php
-	define('App', 'http://api.leefranco.com/');
+	define('App', 'https://huskroot-api.cocoware.co.uk');
 ?>
