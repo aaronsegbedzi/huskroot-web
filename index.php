@@ -84,10 +84,10 @@
               <form class="animated fadeIn" id="login-form" name="login-form">
                 <div class="row form-row m-l-20 m-r-20 xs-m-l-10 xs-m-r-10">
                   <div class="col-md-6 col-sm-6">
-                    <input class="form-control" id="username" name="username" placeholder="Email or Phone Number" type="text" required="true">
+                    <input class="form-control" id="username" name="username" value="demo@example.com" placeholder="Email or Phone Number" type="text" required="true">
                   </div>
                   <div class="col-md-6 col-sm-6">
-                    <input class="form-control" id="password" name="password" placeholder="Password" type="password" required="true">
+                    <input class="form-control" id="password" name="password" value="12345678" placeholder="Password" type="password" required="true">
                   </div>
                 </div>
                 <div class="row form-row m-l-20 m-r-20 xs-m-l-10 xs-m-r-10">
